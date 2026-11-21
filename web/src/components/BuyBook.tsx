@@ -10,14 +10,14 @@ interface Store {
 // Indie-friendly stores first. Books have no ISBN, so each link is a title + author search.
 const EBOOK_STORES: Store[] = [
   { name: 'Bookshop.org', note: 'Supports local bookstores', url: (q) => `https://bookshop.org/search?keywords=${q}` },
-  { name: 'Kobo', url: (q) => `https://www.kobo.com/search?query=${q}` },
-  { name: 'Amazon', url: (q) => `https://www.amazon.com/s?k=${q}` },
+  { name: 'Kobo', url: (q) => `https://www.kobo.com/ca/en/search?query=${q}` },
+  { name: 'Amazon', url: (q) => `https://www.amazon.ca/s?k=${q}` },
 ];
 
 const AUDIOBOOK_STORES: Store[] = [
   { name: 'Libro.fm', note: 'Supports local bookstores', url: (q) => `https://libro.fm/search?q=${q}` },
-  { name: 'Kobo', url: (q) => `https://www.kobo.com/search?query=${q}` },
-  { name: 'Audible', url: (q) => `https://www.audible.com/search?keywords=${q}` },
+  { name: 'Kobo', url: (q) => `https://www.kobo.com/ca/en/search?query=${q}` },
+  { name: 'Audible', url: (q) => `https://www.audible.ca/search?keywords=${q}` },
 ];
 
 /** "Support the author" button: a menu of store searches for this book. */
