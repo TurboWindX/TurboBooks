@@ -5,6 +5,7 @@ import type { BookDetail, KindleSettings } from '../api';
 import { useAuth } from '../auth';
 import { Cover } from '../components/Cover';
 import { BooksIcon, ChevronLeftIcon, PauseIcon, PlayIcon } from '../components/Icons';
+import { BuyBook } from '../components/BuyBook';
 import { MakeAudiobook } from '../components/MakeAudiobook';
 import { BookSkeleton } from '../components/Skeleton';
 import { Stars } from '../components/Stars';
@@ -228,6 +229,11 @@ export function BookPage() {
               <a className="btn btn-lg" href={ebookDownloadUrl(book.id)} download>
                 Download
               </a>
+            )}
+
+            {/* Public-domain books have no one to pay. */}
+            {!(book.source && book.source in SOURCE_LABELS) && (
+              <BuyBook title={book.title} author={book.author} kind={book.kind} />
             )}
 
             {hasMenu && (
